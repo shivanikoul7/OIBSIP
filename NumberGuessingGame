@@ -1,0 +1,44 @@
+//NUMBER GUESSING GAME
+import java.util.Scanner;
+
+public class NUMBER_GUESSING_GAME {
+	
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner(System.in);
+		
+		int number = 1 + ( int ) ( 100 * Math.random());
+		int x = 8;
+		int i, guess;
+		System.out.println("A number is chosen "+"between 1 to 100 "+"Guess the number "+"within 8 trials");
+		
+		for( i = 0; i < x ; i++) {
+			System.out.println("Guess the number :");
+			guess = input.nextInt();
+			
+			
+			if(number==guess) {
+				System.out.println("Congrats!"+"You guessed the Number");
+				System.out.println("You won the game");
+                break;
+                
+                
+			}else if(number>guess&& i!=x-1) {
+					System.out.println("The number is "+"greater than "+guess);
+					
+					
+			}else if (number<guess&& i!=x-1) {
+				System.out.println("This number is "+"less than "+guess);
+			}
+		}
+		if (i==x) {
+			System.out.println("You have exhausted "+ x +" trials");
+			System.out.println("The number was "+number);
+		}
+		System.out.println("Oh you lost the game\n Try Again");
+		
+			}
+	
+	
+		
+		}
